@@ -12,13 +12,18 @@
 }
 html {
     font-size: 62.5%;
+    // @media screen and (max-width: 1600px){
+    //     font-size: 60%;
+    // }
 }
 body {
     width: 100%;
     max-width: $container-max-width;
     margin: auto;
     // @include text(var(--body18-fs), $font-main, var(--body18-lh), $black30-cl, none);
+    font-family: $font-main;
     background: $white100-cl;
+    color: black;
     @include customscroll();
     .wrapper {
         position: relative;
@@ -34,6 +39,8 @@ body {
         overflow-x: hidden;
         position: relative;
         z-index: 12;
+
+        -webkit-overflow-scrolling: touch;
     }
     section {
         position: relative;
@@ -61,32 +68,33 @@ body {
     }
     .container {
         width: 100%;
-        padding-right: var(--gap);
-        padding-left: var(--gap);
-        margin-right: auto;
-        margin-left: auto;
+        margin: 0 auto;
+        padding: 0 var(--gap);
         position: relative;
         z-index: 9;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        column-gap: 3rem;
         &.--small {
             max-width: 1100px;
         }
     }
     .container-fluid {
         width: 100%;
-        max-width: 2500px;
-        padding-right: 50px;
-        padding-left: 50px;
+        max-width: 168rem;
+        padding-right: 12rem;
+        padding-left: 12rem;
         margin-right: auto;
         margin-left: auto;
         position: relative;
         @media (max-width: $md-max) {
-            max-width: 1230px;
-            padding-right: 15px;
-            padding-left: 15px;
+            max-width: 123rem;
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
         }
         @include xs {
-            padding-right: 15px;
-            padding-left: 15px;
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
         }
     }
     .row {
@@ -132,7 +140,7 @@ body {
     }
     @media (min-width: $md-min) {
         .container {
-            max-width: 1230px;
+            max-width: 100%;
         }
     }
     @media (min-width: $lg-min) {

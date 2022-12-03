@@ -19,7 +19,7 @@ a {
     outline: 0;
     // color: $black30-cl;
     &.link {
-        color: $main-cl;
+        color: $primary-cl;
         @include transition($t);
         &:hover {
             // opacity: 0.6;
@@ -46,7 +46,7 @@ sub {
     color: $white100-cl;
 }
 .--main-cl {
-    color: $main-cl;
+    color: $primary-cl;
 }
 
 //================================== HEADING ===========================//
@@ -83,45 +83,100 @@ sub {
 
 /////////////////////////// BUTTON //////////////////////////
 
-.btnmain {
+.btnMain {
     width: max-content;
-    height: 45px;
-    font-size: var(--body14-fs);
-    line-height: var(--body14-lh);
-    // font-family: gb;
+    font-size: var(--body16FS);
+    line-height: 1.6;
     text-transform: uppercase;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 30px;
+    padding: 1.25rem 3.2rem;
     cursor: pointer;
-    &:after {
-        content: "";
-        width: 75px;
-        height: 100%;
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: $main-cl;
-        border-radius: 22px;
-        z-index: -1;
-        @include transition($t $cubic);
+    background-color: $primary-cl;
+    color: white;
+    font-family: 'MRope-600';
+    border-radius: 100vmax;
+    @media screen and (max-width: 1400px){
+        padding: 0.8rem 2.8rem;
     }
-    &:hover {
-        &:after {
-            width: 100%;
-        }
+    @media screen and (max-width: 1280px){
+        padding: 0.6rem 2rem;
+        font-size: 1rem;
     }
-    &.--white {
-        &:after {
-            background: $white100-cl;
-        }
+    @media screen and (max-width: 1024px){
+        padding: 0.5rem 2rem;
     }
-    &.--center {
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
+    @media screen and (max-width: 992px){
+        font-size: 1.5rem;
+        padding: 1.2rem 3rem;
+    }
+    @media screen and (max-width: 500px){
+        font-size: 1.6rem;
+        padding: 1.5rem 4rem;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'CG-500';
+}
+
+h1 {
+    font-size: var(--h1FS);
+    line-height: var(--h1LH);
+    text-transform: uppercase;
+
+}
+h2 {
+    font-size: var(--h2FS);
+    line-height: var(--h2LH);
+}
+h3 {
+    font-size: var(--h3FS);
+    line-height: var(--h3LH);
+}
+h4 {
+    font-size: var(--h4FS);
+    line-height: var(--h4LH);
+}
+h5 {
+    font-size: var(--h5FS);
+    line-height: var(--h5LH);
+}
+h6 {
+    font-size: var(--h6FS);
+    line-height: var(--h6LH);
+}
+.text-mRope {
+    font-family: 'MRope-600';
+    font-size: var(--body24FS);
+    line-height: 1.6;
+}
+.text-default {
+    font-family: 'MRope-400';
+    font-size: var(--body16FS);
+    line-height: 1.6;
+}
+.headline {
+    font-family: 'CG-500';
+    font-size: var(--body16FS);
+    line-height: 1.35;
+    letter-spacing: 0.04em;
+
+    color: $secondary-cl;
+    text-transform: uppercase;
+    text-align: center;
+
+    margin-bottom: 0.8rem;
+}
+
+.txWhite {
+    color: white;
+}
+
+@keyframes runnerText {
+    to {
+        text-shadow: -9.8ch 0 0.01rem white, 0 0 0.01rem white, 9.8ch 0 0.01rem white, 19.6ch 0 0.01rem white;
     }
 }
