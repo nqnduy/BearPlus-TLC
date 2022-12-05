@@ -75,7 +75,7 @@ $(document).ready(function () {
     let $hamburger = $("#hamburger");
 
     $hamburger.click(function () {
-        $("header .headerMb").toggleClass("openNav");
+        $("body").toggleClass("openNav");
     })
 
     let $introSlider = $("#intro-slider");
@@ -87,5 +87,28 @@ $(document).ready(function () {
 			prevNextButtons: false,
 			pageDots: false,
 		});
+    // let $mainButton = $(".btnMain");
+    // $mainButton.forEach(function () {
+    //     button.innerHTML =
+    // })
+    // document.querySelectorAll(".btnMain").forEach((button) =>
+    //     (button.innerHTML = "<div><span>" + button.textContent.split("").join("</span><span>") + "</span></div>")
+    // );
 
+    let lastScrollTop = 0;
+    $(window).scroll(function (e) {
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop) {
+            if (st > 440) {
+                $("header").addClass("hide");
+            }
+        }
+        else {
+            if (st > 440) {
+                $("header").addClass("hide");
+                $("header").removeClass("hide");
+            }
+        }
+        lastScrollTop = st;
+    })
 })

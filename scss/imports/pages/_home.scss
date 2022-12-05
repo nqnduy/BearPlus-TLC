@@ -71,15 +71,26 @@
 
                     overflow: hidden;
                     margin-bottom: 8rem;
+                    @include transition(0.4s ease);
+
                     img {
                         min-width: 100%;
                         min-height: 100%;
                         object-fit: cover;
+                        @include transition(0.4s ease);
 
                         position: absolute;
                         top: 50%;
                         left: 50%;
                         @include transform(translate(-50%, -50%));
+                    }
+                }
+                &:hover {
+                    .intro__showcase-item-img {
+                        filter: saturate(0.6);
+                        img {
+                            @include transform(translate(-50%, -50%) scale(1.04));
+                        }
                     }
                 }
             }
@@ -91,6 +102,7 @@
 
     .weDo {
         padding: var(--paddingSection) 0;
+        padding-bottom: calc(var(--paddingSection) + 1%);
         background-color: $tertiary-cl;
         position: relative;
         overflow: hidden;
@@ -157,13 +169,23 @@
                     transition: 0.3s opacity ease;
 
                     position: relative;
+                    @include transition(0.5s all cubic-bezier(0.3, 0, 0.2, 1));
+
                     h6 {
                         position: absolute;
                         left: 50%;
-                        @include transform(translate(-50%));
+                        @include transform(translate(-60%));
+                        opacity: 0;
+                        filter: blur(0.06rem);
+                        @include transition(0.5s all cubic-bezier(0.3, 0, 0.2, 1));
                     }
                     p:last-child {
                         margin-right: 4rem;
+                    }
+                    p {
+                        opacity: 0;
+                        @include transition(0.5s all cubic-bezier(0.3, 0, 0.2, 1));
+                        filter: blur(0.06rem);
                     }
 
                 }
@@ -177,6 +199,18 @@
                     }
                     .textWrap {
                         opacity: 1;
+                        h6 {
+                            opacity: 1;
+                            transition-delay: 0.3s;
+                            @include transform(translate(-50%));
+                            filter: blur(0px);
+                        }
+                        p {
+                            opacity: 1;
+                            transition-delay: 0.3s;
+                            @include transition(0.5s all cubic-bezier(0.3, 0, 0.2, 1));
+                            filter: blur(0px);
+                    }
                     }
                 }
             }
@@ -190,32 +224,36 @@
                 justify-content: space-between;
                 padding: 0 9.5%;
                 width: 100%;
+
                 .control-left, .control-right {
                     display: flex;
                     justify-content: center;
                     align-items: center;
 
+                    box-shadow: inset 0 0 20px rgba(204, 162, 113, 0);
+                    outline: 1px solid;
+                    outline-color: rgba(204, 161, 113, 0.5);
+                    outline-offset: 0px;
+                    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+
                     padding: 3.2rem;
-                    border: 0.01rem solid $secondary-cl;
+                    border: 0 solid;
                     width: fit-content;
                     border-radius: 50%;
                     cursor: pointer;
                     position: relative;
-                    // &:before {
-                    //     content: "";
-                    //     position: absolute;
-                    //     width: 100%;
-                    //     height: 100%;
-                    //     top: 0;
-                    //     left: 0;
-                    //     background-color: $secondary-cl;
-                    //     border-radius: 50%;
-                    //     z-index: -1;
-                    //     opacity: 0;
-                    // }
-                    // &:hover {
-
-                    // }
+                    svg path {
+                        transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+                    }
+                    &:hover {
+                        border: 1px solid $secondary-cl;
+                        box-shadow: inset 0 0 20px rgba(204, 161, 113, 0.5), 0 0 20px rgba(204, 161, 113, 0.2);
+                        outline-color: rgba(204, 161, 113, 0);
+                        outline-offset: 15px;
+                        svg path {
+                            fill: rgba(255, 255, 255, 0.849);
+                        }
+                    }
                 }
                 .control-right {
                     @include transform(rotate(180deg));
@@ -237,7 +275,7 @@
                 content: "our project";
             }
         }
-        #weDo-slideMb {
+        #weDo-sliderMb {
             display: none;
         }
     }
@@ -339,7 +377,8 @@
             align-items: center;
 
             cursor: pointer;
-            @include transition(0.4s ease-out);
+            @include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
+
             &:not(:last-child) {
                 border-right: 0.01em solid rgba(255, 255, 255, 0.1);
             }
@@ -352,7 +391,7 @@
                 justify-content: center;
                 align-items: center;
 
-                @include transition(0.45s ease-in);
+                @include transition(all 0.45s cubic-bezier(0.7,0,0.3,1));
                 @include transform(translateY(50%));
             }
             .img {
@@ -380,7 +419,7 @@
                 min-height: 2.5em;
                 display: flex;
                 align-items: center;
-                @include transition(0.3s ease-in);
+                @include transition(all 0.3s cubic-bezier(0.7,0,0.3,1));
             }
             p {
                 left: 0;
@@ -388,28 +427,47 @@
                 padding: 0 3rem;
                 opacity: 0;
 
-                @include transition(0.6s ease);
+                @include transition(all 0.6s cubic-bezier(0.7,0,0.3,1));
                 @include transform(translateY(100%));
             }
             &:hover {
                 background-color: white;
                 display: flex;
+                transition-delay: 0.15s;
 
                 .title {
+                    transition-delay: 0.05s;
                     @include transform(translateY(0));
                     h5 {
                         color: black;
                     }
                 }
                 p {
+                    transition-delay: 0.1s;
                     opacity: 1;
                     @include transform(translateY(0));
                 }
             }
         }
     }
-
-    @media screen and (max-width: 1600px){
+    @media screen and (min-width: 2561px){
+        .weDo {
+            &__library {
+                &-list {
+                    padding: 0 3rem;
+                }
+                &-item {
+                    .img {
+                        height: 75vh;
+                    }
+                }
+                &-control {
+                    padding: 0 8vw;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1599px){
         .intro {
             &__showcase {
                 &-item-img {
@@ -440,7 +498,7 @@
             }
         }
     }
-    @media screen and (max-width: 1440px){
+    @media screen and (max-width: 1439px){
         .banner {
             &__text {
                 bottom: 7.5rem;
@@ -496,7 +554,7 @@
                 }
             }
             &__tagline {
-                bottom: -3.2%;
+                bottom: -3.8%;
                 font-size: 16rem;
             }
         }
@@ -540,7 +598,7 @@
             }
         }
     }
-    @media screen and (max-width: 1280px){
+    @media screen and (max-width: 1279px){
         .banner {
             &__text {
                 bottom: 6rem;
@@ -632,7 +690,7 @@
             }
         }
     }
-    @media screen and (max-width: 1024px){
+    @media screen and (max-width: 1023px){
         .banner {
             height: 42vh;
         }
@@ -679,7 +737,7 @@
             }
         }
     }
-    @media screen and (max-width: 992px){
+    @media screen and (max-width: 991px){
         .banner {
             height: 65vh;
             &__text {
@@ -842,7 +900,7 @@
             }
         }
     }
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 767px){
         .banner {
             height: calc(100vh - var(--heightHeader));
             br {
