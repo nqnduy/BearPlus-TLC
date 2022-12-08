@@ -192,6 +192,10 @@
 	overflow: hidden;
 }
 
+@mixin calcColumn($property, $width1, $width2: 0, $width3: 0) {
+	#{$property}: calc((#{$width1} + #{$width2} + #{$width3}) / 1680 * 100 * 1%);
+}
+
 @mixin customscroll($width: 7px, $bgTrack: #ddd, $bgThumb: $black30-cl) {
 	&::-webkit-scrollbar {
 		width: $width;

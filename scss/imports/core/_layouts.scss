@@ -25,6 +25,10 @@ body {
     background: $white100-cl;
     color: black;
     @include customscroll();
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     .wrapper {
         position: relative;
         z-index: 10;

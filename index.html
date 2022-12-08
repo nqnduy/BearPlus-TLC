@@ -27,12 +27,12 @@
     <header class="header">
         <div class="container">
             <div class="header__content">
-                <div class="logo">
+                <a class="logo" href="./">
                     <img src="./images/logo.svg" alt="">
-                </div>
+                </a>
                 <ul class="menu">
-                    <li class="menu-item"><a href="">home</a></li>
-                    <li class="menu-item"><a href="">about us</a></li>
+                    <li class="menu-item"><a href="./">home</a></li>
+                    <li class="menu-item"><a href="./about-us.html">about us</a></li>
                     <li class="menu-item"><a href="">our facilities</a></li>
                     <li class="menu-item"><a href="">team</a></li>
                     <li class="menu-item"><a href="">projects</a></li>
@@ -47,9 +47,9 @@
         </div>
         <div class="headerMb">
             <div class="headerMb__content">
-                <div class="logo">
+                <a class="logo" href="./">
                     <img src="./images/logo.svg" alt="">
-                </div>
+                </a>
                 <div class="hamburger" id="hamburger">
                     menu
                     <span>
@@ -64,8 +64,8 @@
         <div class="container">
             <div class="nav__inside">
                 <ul class="nav__menu">
-                    <li class="nav__menu-item active"><a href="">home</a></li>
-                    <li class="nav__menu-item"><a href="">about us</a></li>
+                    <li class="nav__menu-item active"><a href="./">home</a></li>
+                    <li class="nav__menu-item"><a href="./about-us.html">about us</a></li>
                     <li class="nav__menu-item"><a href="">facilities</a></li>
                     <li class="nav__menu-item"><a href="">team</a></li>
                     <li class="nav__menu-item"><a href="">projects</a></li>
@@ -94,13 +94,22 @@
                 </div>
                 <div class="banner__text">
                     <div class="container">
-                        <h1>Greener <br>smarter & faster</h1>
+                        <h1 class="split-innerText">
+                            <span class="line__inner">Greener </span><span class="line__inner">smarter & faster</span>
+                        </h1>
                         <div class="banner__text-right">
-                            <p class="text-mRope">Modular Construction is the new way <br>of building better.</p>
-                            <a href="">
-                                <span class="btnMain">
-                                    <span data-text="contact us">contact us</span>
+                            <p class="text-mRope split-innerText">
+                                <span class="line__inner">
+                                    Modular Construction is the new way
                                 </span>
+                                <span class="line__inner">of building better.</span>
+                            </p>
+                            <a href="">
+                                <div class="line__inner">
+                                    <span class="btnMain">
+                                        <span data-text="contact us">contact us</span>
+                                    </span>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -111,7 +120,14 @@
             <section class="intro">
                 <div class="container">
                     <div class="intro__content">
-                        <h3>Introduce A Greener, Smarter & Faster Way To Build <br>To Build Homes, Hotels & Developments</h3>
+                        <h3>
+                            <span class="line__inner">
+                                Introduce A Greener, Smarter & Faster Way To Build
+                            </span>
+                            <span class="line__inner">
+                                To Build Homes, Hotels & Developments
+                            </span>
+                        </h3>
                         <div class="intro__showcase">
                             <div class="intro__showcase-item">
                                 <div class="intro__showcase-item-img">
@@ -122,18 +138,22 @@
                                 <div class="intro__showcase-item-img">
                                     <img src="./images/intro-2.jpg" alt="">
                                 </div>
-                                <p class="text-default">This leading to community friendly and more sustainable buildings. Our modules install
+                                <p class="text-default">
+                                    This leading to community friendly and more sustainable buildings. Our modules install
                                     quickly on site, minimizing
                                     neighborhood impact – all whilst residents enjoy a high-tech, high-performance homes for a competitive
-                                    price.</p>
+                                    price.
+                                </p>
                             </div>
                             <div class="intro__showcase-item">
                                 <div class="intro__showcase-item-img">
                                     <img src="./images/intro-3.jpg" alt="">
                                 </div>
-                                <p class="text-default">Our mission is to be a Market Leader, working with local partners to address housing
+                                <p class="text-default">
+                                    Our mission is to be a Market Leader, working with local partners to address housing
                                     supply constraints and
-                                    affordability, and deliver development into regional and remote communities.</p>
+                                    affordability, and deliver development into regional and remote communities.
+                                </p>
                             </div>
                             <div class="intro__showcase-item">
                                 <div class="intro__showcase-item-img">
@@ -174,7 +194,6 @@
                                     affordability, and deliver development into regional and remote communities.</p>
                         </div>
                     </div>
-
                 </div>
 
 
@@ -184,9 +203,14 @@
             <section class="weDo">
                 <div class="container">
                     <div class="weDo__content">
-                        <p class="headline">What we do</p>
+                        <p class="headline">
+                            <span class="line__inner">What we do</span>
+                        </p>
                         <div class="weDo__wrapText">
-                            <h2 class="weDo__wrapText-left txWhite">The Forefront Of The Modular Construction Market Since 2001</h2>
+                            <h2 class="weDo__wrapText-left txWhite">
+                                <span class="line__inner">The Forefront Of The Modular</span>
+                                <span class="line__inner">Construction Market Since 2001</span>
+                            </h2>
                             <p class="weDo__wrapText-right text-default txWhite">Our modular system offers effective, efficient, and agile
                                 construction solutions at affordable prices for property
                                 owners and developers. We tailor the project execution plan, design, engineering, to meet the specific needs of
@@ -361,44 +385,71 @@
             <section class="process">
                 <div class="container">
                     <div class="process__content">
-                        <p class="headline">our process</p>
-                        <h2>We Offer End-To-End Design And <br>Engineering Services</h2>
-                        <p class="text-default">At TLC, we fast-track design development, procurement, and project<br>management with our in-house capabilities, using a
-                        range of Digital Design<br>Platforms, BIM Modeling and 3DVR.</p>
+                        <p class="headline">
+                            <span class="line__inner">
+                                our process
+                            </span>
+                        </p>
+                        <h2>
+                            <span class="line__inner">
+                                We Offer End-To-End Design And
+                            </span>
+                            <span class="line__inner"> Engineering Services</span>
+                        </h2>
+                        <p class="text-default process__content-desc">At TLC, we fast-track design development, procurement, and project<br>management with our in-house capabilities, using a
+                        range of Digital Design Platforms, BIM Modeling and 3DVR.</p>
                         <ul class="process__content-step">
                             <li>
-                                <span class="number">01</span>
+                                <span class="number">
+                                    <span class="line__inner">
+                                        01
+                                    </span>
+                                </span>
                                 <div class="img">
                                     <img src="./images/icon/step1.png" alt="">
                                 </div>
-                                <h4>Designed</h4>
-                                <p class="text-default">From concept architecture through to development and building approvals, our design expertise is the key to achieving
-                                the best outcomes for clients and successful project delivery. Our valued 80+ production and development staff covers
-                                architecture, engineering and project management to ensure total structural development under one roof.</p>
+                                <h4><span class="line__inner">Designed</span></h4>
+                                <p class="text-default">
+                                    From concept architecture through to development and building approvals, our design expertise is the key to achieving
+                                    the best outcomes for clients and successful project delivery. Our valued 80+ production and development staff covers
+                                    architecture, engineering and project management to ensure total structural development under one roof.
+                                </p>
                             </li>
 
                             <li>
-                                <span class="number">02</span>
+                                <span class="number">
+                                    <span class="line__inner">
+                                        02
+                                    </span>
+                                </span>
                                 <div class="img">
                                     <img src="./images/icon/step2.png" alt="">
                                 </div>
-                                <h4>Engineered</h4>
-                                <p class="text-default">Our in-house engineers and suite of external consultants have a track record of challenges uniquely present in modular
-                                engineered buildings. We deploy a full suite of Digital Design software systems, including BIM Management systems and
-                                consultant collaboration to ensure precision, efficiency and ingenuity can be achieved across time zones to different
-                                regional building standards.</p>
+                                <h4><span class="line__inner">Engineered</span></h4>
+                                <p class="text-default">
+                                    Our in-house engineers and suite of external consultants have a track record of challenges uniquely present in modular
+                                    engineered buildings. We deploy a full suite of Digital Design software systems, including BIM Management systems and
+                                    consultant collaboration to ensure precision, efficiency and ingenuity can be achieved across time zones to different
+                                    regional building standards.
+                                </p>
                             </li>
 
                             <li>
-                                <span class="number">03</span>
-                                <div class="img">
-                                    <img src="./images/icon/step3.png" alt="">
-                                </div>
-                                <h4>Controlled</h4>
-                                <p class="text-default">Quality Assurance and Quality Control is at the heart of our delivery promise to clients. We map-out our compliance
-                                pathway with consultants and authorities then meticulously document and photo-record every step in every module through
-                                our live online trade certification porthole. TLC values workmanship and encourages client engagement through our
-                                virtual platforms and or on-site visitation.</p>
+                                <span class="number">
+                                    <span class="line__inner">
+                                        03
+                                    </span>
+                                </span>
+                                    <div class="img">
+                                        <img src="./images/icon/step3.png" alt="">
+                                    </div>
+                                <h4><span class="line__inner">Controlled</span></h4>
+                                <p class="text-default">
+                                    Quality Assurance and Quality Control is at the heart of our delivery promise to clients. We map-out our compliance
+                                    pathway with consultants and authorities then meticulously document and photo-record every step in every module through
+                                    our live online trade certification porthole. TLC values workmanship and encourages client engagement through our
+                                    virtual platforms and or on-site visitation.
+                                </p>
                             </li>
                         </ul>
                     </div>
@@ -408,8 +459,14 @@
             <section class="guarantee">
                 <div class="container">
                     <div class="guarantee__content">
-                        <p class="headline">our guarantee</h3>
-                        <h2 class="txWhite">Robust, On-Time & Reliable</h2>
+                        <p class="headline">
+                            <span class="line__inner">
+                                our guarantee
+                            </span>
+                        </p>
+                        <h2 class="txWhite">
+                            <span class="line__inner">Robust, On-Time & Reliable</span>
+                        </h2>
                         <p class="text-default txWhite">Our extensive, proven track record of over two decades demonstrates that we know what we’re<br>doing, and our reputation as
                         industry leaders is well earned.</p>
                     </div>
@@ -432,7 +489,7 @@
                             <div class="wrap-hidden">
                                 <div class="title">
                                     <div class="img">
-                                        <img src="./images//icon/guarantee2.png" alt="">
+                                        <img src="./images/icon/guarantee2.png" alt="">
                                     </div>
                                     <h5 class="txWhite">Highest quality of manufacturing facility</h5>
                                 </div>
@@ -481,7 +538,14 @@
         </div>
         <div class="container">
             <div class="footer__content">
-                <h2>Let's Talk About Your Project And <br>Start Building!</h2>
+                <h2>
+                    <span class="line__inner">
+                        Let's Talk About Your Project And
+                    </span>
+                    <span class="line__inner">
+                        Start Building!
+                    </span>
+                </h2>
                 <a href="">
                     <span class="btnMain">
                         <span data-text="contact us">contact us</span>

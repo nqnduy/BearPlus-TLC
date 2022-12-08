@@ -2,10 +2,12 @@
     position: relative;
     height: 79.4rem;
     width: 100%;
+    overflow: hidden;
     &__bg {
-        position: relative;
         height: 100%;
         overflow: hidden;
+        position: relative;
+        filter: brightness(0.6);
         img {
             position: absolute;
             top: 50%;
@@ -44,9 +46,10 @@
             align-items: flex-start;
             justify-content: space-between;
 
-            border-top: 0.01rem solid #D4D4D4;
+            border-top: 0.1rem solid #D4D4D4;
 
             padding-top: 6rem;
+            position: relative;
             .leftWrap {
                 display: flex;
                 width: 65%;
@@ -70,6 +73,7 @@
                 .infor {
                     display: flex;
                     width: 70%;
+                    padding-right: 3rem;
                     &__item {
                         text-align: left;
                         max-width: 17.5rem;
@@ -89,28 +93,73 @@
                 .menuMb {
                     display: none;
                     &-item {
-                    color: #404040;
-                    font-size: var(--body16FS);
-                    text-transform: uppercase;
-                        &:not(:first-child) {
-                            margin-left: 4rem;
+                        color: #404040;
+                        font-size: var(--body16FS);
+                        text-transform: uppercase;
+                            &:not(:first-child) {
+                                margin-left: 4rem;
+                            }
                         }
-                    }
                 }
             }
             .menu {
                 width: 35%;
-                display: flex;
-                justify-content: flex-end;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+                gap: 1.5rem 4rem;
+                justify-items: center;
+                justify-self: flex-end;
                 &-item {
                     color: #404040;
                     font-size: var(--body16FS);
                     text-transform: uppercase;
-                    &:not(:first-child) {
-                        margin-left: 4rem;
+                    a {
+                        position: relative;
+                        width: fit-content;
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 0.15rem;
+                            background-color: #171717;
+                            bottom: -0.2rem;
+                            left: 0;
+                            transform-origin: right;
+                            @include transform(scaleX(0));
+                            @include transition(0.6s transform cubic-bezier(0.66, 0, 0.15, 1));
+                        }
+                    }
+                    &:hover {
+                        a {
+                            &:before {
+                                transform-origin: left;
+                                @include transform(scaleX(1));
+                            }
+                        }
                     }
                 }
             }
+            // &:before {
+            //     content: "";
+            //     position: absolute;
+            //     top: 0;
+            //     left: 50%;
+            //     // @include transform(transform)
+            //     width: 0;
+            //     height: 0.1rem;
+            //     background-color: #262626;
+            //     opacity: 0;
+            //     @include transition(0.6s all cubic-bezier(.3, 0, .2, 1));
+            // }
+            // &:hover {
+            //     &:before {
+            //         left: 0;
+            //         width: 100%;
+            //         transition-delay: 1.1s;
+            //         background-color: #E5E5E5;
+            //         opacity: 1;
+            //     }
+            // }
         }
     }
     &__copyright {
@@ -152,11 +201,7 @@
                 }
                 .menu {
                     width: 45%;
-                    &-item {
-                        &:not(:first-child) {
-                            margin-left: 3.6rem;
-                        }
-                    }
+                    gap: 1.5rem 3.6rem;
                 }
             }
         }
@@ -256,7 +301,6 @@
                 .menu {
                     width: 35%;
                     display: grid;
-                    grid-template-columns: repeat(3, 1fr);
                     gap: 0.2rem 1rem;
                     &-item {
                         margin: 0 !important;
@@ -290,6 +334,7 @@
                     align-items: center;
                     .logo {
                         margin-bottom: 4rem;
+                        margin-right: 0;
                     }
                     .menuMb {
                         display: flex;
@@ -319,6 +364,7 @@
                             &:not(:first-child) {
                                 .text-default {
                                     font-family: "MRope-600";
+                                    color: $primary-cl;
                                 }
                             }
                         }

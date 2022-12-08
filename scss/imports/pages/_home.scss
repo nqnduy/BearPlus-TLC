@@ -50,6 +50,7 @@
     }
 
     .intro {
+        background-color: white;
         padding: var(--paddingSection) 0;
         &__content {
             grid-column: 1/9;
@@ -71,7 +72,9 @@
 
                     overflow: hidden;
                     margin-bottom: 8rem;
+                    clip-path: inset(100% 0% 0% 0%);
                     @include transition(0.4s ease);
+                    // transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
 
                     img {
                         min-width: 100%;
@@ -84,6 +87,9 @@
                         left: 50%;
                         @include transform(translate(-50%, -50%));
                     }
+                    // &.is-reveal {
+                    //     clip-path: inset(0% 0% 0% 0%);
+                    // }
                 }
                 &:hover {
                     .intro__showcase-item-img {
@@ -109,10 +115,12 @@
         .headline {
             text-align: left;
         }
-        .btnMain {
-            left: 68%;
+        a {
+            display: inline-block;
+            margin-left: 68%;
             margin-top: 2.4rem;
         }
+
         &__content {
             grid-column: 1/9;
         }
@@ -266,7 +274,7 @@
             font-family: "CG-500";
             font-size: 20rem;
             line-height: 0.95;
-            text-shadow: 0 0 0.01rem white, 9.8ch 0 0.01rem white, 19.6ch 0 0.01rem white, 29.4ch 0 0.01rem white;
+            text-shadow: 0 0 0.1rem white, 9.8ch 0 0.1rem white, 19.6ch 0 0.1rem white, 29.4ch 0 0.1rem white;
             color: transparent;
             opacity: 0.02;
             text-transform: uppercase;
@@ -282,6 +290,7 @@
 
     .process {
         padding: var(--paddingSection) 0;
+        background-color: white;
         &__content {
             grid-column: 1/9;
 
@@ -289,6 +298,10 @@
 
             h2 {
                 margin-bottom: 3.2rem;
+            }
+            &-desc {
+                margin: 0 auto;
+                width: 58.5rem;
             }
             &-step {
                 --gapStep: 4.4rem;
@@ -307,7 +320,7 @@
                     text-align: left;
 
                     &:not(:last-child) {
-                        border-right: 0.01rem solid #E5E5E5;
+                        border-right: 0.1rem solid #E5E5E5;
                     }
                     .number {
                         position: absolute;
@@ -317,6 +330,8 @@
                         font-size: 20rem;
                         line-height: 0.95;
                         color: #F5F5F5;
+                        filter: blur(0px);
+
                     }
                     .img {
                         position: relative;
@@ -523,7 +538,7 @@
         }
 
         .weDo {
-            .btnMain {
+            a {
                 margin-top: 2rem;
             }
             &__library {
@@ -618,8 +633,8 @@
             }
         }
         .weDo {
-            .btnMain {
-                left: 65%;
+            a {
+                margin-left: 65%;
             }
             &__wrapText-right {
                 width: 35%;
@@ -738,6 +753,11 @@
         }
     }
     @media screen and (max-width: 991px){
+        h2 {
+            .line {
+                text-align: center;
+            }
+        }
         .banner {
             height: 65vh;
             &__text {
@@ -788,10 +808,17 @@
             .headline {
                 text-align: center;
             }
-            .btnMain {
+
+            &__content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            a {
                 margin: 0 auto;
-                left: 0;
                 margin-top: 2.4rem;
+                text-align: center;
+                // margin-left: 0;
             }
             &__wrapText {
                 text-align: center;
@@ -860,7 +887,7 @@
                         padding-top: 0;
                         padding: 4rem 0;
                         &:not(:last-child) {
-                            border-bottom: 0.01rem solid #E5E5E5;
+                            border-bottom: 0.1rem solid #E5E5E5;
                             border-right: none;
                         }
                         .number {

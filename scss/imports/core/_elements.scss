@@ -101,7 +101,7 @@ sub {
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.7,0,0.3,1);
     border: 1px solid $primary-cl;
-    box-shadow: 0 2px 8px -1px rgba(21, 25, 36, 0.32);
+    // box-shadow: 0 2px 8px -1px rgba(21, 25, 36, 0.32);
     span {
         position: relative;
         display: block;
@@ -114,7 +114,7 @@ sub {
             content: attr(data-text);
             position: absolute;
             bottom: 100%;
-            font-style: italic;
+            // font-style: italic;
             width: 100%;
             text-align: center;
             left: 0;
@@ -127,7 +127,6 @@ sub {
 
     &:hover {
         background-color: white;
-        box-shadow: 0 4px 20px -2px rgba(21, 25, 36, 0.2);
         span {
             color: transparent;
             transform: translate3d(0,100%,0);
@@ -216,10 +215,21 @@ h6 {
 .txWhite {
     color: white;
 }
+.line {
+    overflow: hidden;
+    display: inline-block !important;
+
+    &:nth-of-type(even) {
+        margin-top: -1vw;
+    }
+    &__inner {
+        display: block !important;
+    }
+}
 
 @keyframes runnerText {
     to {
-        text-shadow: -9.8ch 0 0.01rem white, 0 0 0.01rem white, 9.8ch 0 0.01rem white, 19.6ch 0 0.01rem white;
+        text-shadow: -9.8ch 0 0.1rem white, 0 0 0.1rem white, 9.8ch 0 0.1rem white, 19.6ch 0 0.1rem white;
     }
 }
 @keyframes fadeInOpacity {
