@@ -494,7 +494,6 @@ $(document).ready(function () {
 			scrollTrigger: {
 				trigger: DOM.chartStage,
 				start: "top 86%",
-				markers: true,
 			},
 		});
 
@@ -634,7 +633,6 @@ $(document).ready(function () {
 			scrollTrigger: {
 				trigger: DOM.stage,
 				start: "top 60%",
-				markers: true,
 			},
 		});
 

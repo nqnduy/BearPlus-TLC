@@ -544,7 +544,6 @@ $(document).ready(function () {
 			scrollTrigger: {
 				trigger: DOM.stage,
 				start: "top 60%",
-				markers: true
 			}
 		})
 
