@@ -18,7 +18,7 @@
 
                 position: absolute;
                 z-index: 1;
-                top: 50%;
+                top: 38%;
                 left: 50%;
                 @include transform(translate(-50%, -50%));
             }
@@ -301,7 +301,8 @@
             }
             &-desc {
                 margin: 0 auto;
-                width: 58.5rem;
+                max-width: 58.5rem;
+                width: 100%;
             }
             &-step {
                 --gapStep: 4.4rem;

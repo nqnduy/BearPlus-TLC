@@ -17,21 +17,6 @@ $(document).ready(function () {
 		// pauseAutoPlayOnHover: true,
 	});
 
-	let lastScrollTop = 0;
-	$(window).scroll(function (e) {
-		var st = $(this).scrollTop();
-		if (st > lastScrollTop) {
-			if (st > 440) {
-				$("header").addClass("hide");
-			}
-		} else {
-			if (st > 440) {
-				$("header").addClass("hide");
-				$("header").removeClass("hide");
-			}
-		}
-		lastScrollTop = st;
-	});
 	function initBanner() {
         const splitH1 = new SplitType("h1", { type: "lines, chars", linesClass: "line", charsClass: "char", position: "relative" });
 
@@ -599,90 +584,6 @@ $(document).ready(function () {
 				ease: "none",
 			}
 		);
-		gsap.fromTo(
-			DOM.footer.querySelector(".footer__bg img"),
-			{
-				y: "-20vh",
-			},
-			{
-				y: "20vh",
-				scrollTrigger: {
-					trigger: DOM.footer,
-					scrub: true,
-					start: "top 100%",
-				},
-				ease: "none",
-			}
-		);
-	}
-
-	function initFooter() {
-		const DOM = {
-			stage: select(".footer"),
-			background: select(".footer__bg"),
-			title: select(".footer__content h2"),
-			button: select(".footer__content a"),
-			logo: select(".footer .logo"),
-			inforItem: selectAll(".footer .infor__item"),
-			menuItem: selectAll(".footer .menu-item"),
-		};
-
-		const splitTitle = new SplitType(DOM.title, { type: "lines, chars", linesClass: "line", charsClass: "char", position: "relative" });
-
-		tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: DOM.stage,
-				start: "top 60%",
-			},
-		});
-
-		tl.from(DOM.title, {
-			ease: "power4",
-			y: "+=5vh",
-			duration: 2,
-		})
-			.from(
-				DOM.title.querySelectorAll(".line__inner"),
-				{
-					ease: "power4",
-					y: 200,
-					duration: 1.5,
-					stagger: 0.1,
-				},
-				0
-			)
-			.from(
-				DOM.logo,
-				{
-					ease: "power4",
-					opacity: 0,
-					y: 50,
-					duration: 1.5,
-				},
-				"<= 0.5"
-			)
-			.from(
-				DOM.inforItem,
-				{
-					ease: "power4",
-					opacity: 0,
-					y: 50,
-					duration: 1.5,
-					stagger: 0.1,
-				},
-				"<= 0.5"
-			)
-			.from(
-				DOM.menuItem,
-				{
-					ease: "power4",
-					opacity: 0,
-					y: 50,
-					duration: 1.5,
-					stagger: 0.1,
-				},
-				"<= 0.5"
-			);
 	}
 
 	function init() {
@@ -693,7 +594,6 @@ $(document).ready(function () {
 		initQuote();
 		initTeam();
 		initEfficiency();
-		initFooter();
 		initParallax();
 	}
 	init();
